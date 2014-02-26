@@ -212,7 +212,62 @@ a{
     }
     .article-hero{
       margin-bottom: 1.5em;
+      position: relative;
       text-align: center;
+      &:before{
+        display: inline-block;
+        width: 100%;
+        padding-top: 48.26086957%;
+        content: "";
+        @media only screen and (max-width: 60em){
+          display: none;
+        }
+      }
+      &.browser-ipad-iphone,
+      &.browser-ipad,
+      &.browser{
+        max-width: 65.714285714em;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        .browser,
+        .ipad,
+        .iphone{
+          position: absolute;
+          bottom: 0;
+        }
+        .browser{
+          left: 0;
+          @media only screen and (max-width: 60em){
+            position: static;
+          }
+        }
+        .ipad{
+          right: 4.5714285714em;
+          @media only screen and (max-width: 60em){
+            // display: none;
+            width: 40%;
+            right: 0;
+          }
+        }
+        .iphone{
+          right: 0;
+          @media only screen and (max-width: 60em){
+            // display: none;
+            width: 15%;
+          }
+        }
+      }
+      &.browser-ipad{
+        .ipad{
+          right: 0;
+        }
+      }
+      &.browser{
+        .browser{
+          width: 100%;
+        }
+      }
       img{
         max-width: 100%;
       }
