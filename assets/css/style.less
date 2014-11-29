@@ -422,6 +422,15 @@ a{
 
 .section{
   .about-me{
+    .article-primary{
+      a{
+        color: @color-dark-gray-cyan;
+        border-bottom: 1px dotted rgba(red(@color-dark-gray-cyan), green(@color-dark-gray-cyan), blue(@color-dark-gray-cyan),.5);
+        &:hover{
+          border-color: @color-dark-gray-cyan;
+        }
+      }
+    }
     .article-aside{
       a{
         color: @color-red;
