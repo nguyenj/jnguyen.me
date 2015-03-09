@@ -1,0 +1,242 @@
+.work-item
+  overflow: hidden
+  background-color: darken($color-mercury, 20%)
+  color: $color-white
+  &.work-item--focus
+    .work-item__inner
+      margin-bottom: 0
+    .work-item__cta
+      padding-right: 2em
+      &:before,
+      &:after
+        transform: translate3d(0,0,0) rotate3d(0,0,1,135deg)
+        opacity: 1
+      &:after
+        transform: translate3d(0,0,0) rotate3d(0,0,1,225deg)
+      // &:before,
+      // &:after
+      //   transform: translate3d(-1em,0,0) rotate3d(0,0,1,90deg)
+      // &:after
+      //   transform: translate3d(-1em,0,0) rotate3d(0,0,1,180deg)
+      &:hover
+        &:before,
+        &:after
+          transform: translate3d(0,0,0) rotate3d(0,0,1,135deg)
+        &:after
+          transform: translate3d(0,0,0) rotate3d(0,0,1,225deg)
+    .details__inner
+      display: block
+  .work-item__inner
+    transition: margin-bottom 0.2s
+    margin-bottom: -6em
+    padding: 3em 1.5em
+    text-align: center
+    cursor: pointer
+    +break($mobile)
+      padding: 3em 0
+    +break($desktop)
+      margin-bottom: -12em
+    &:hover
+      margin-bottom: 0
+      .desktop.tablet.mobile,
+      .desktop.tablet,
+      .desktop.mobile,
+      .tablet.mobile,
+        .work-item__device--desktop,
+        .work-item__device--tablet,
+        .work-item__device--mobile
+          +break($mobile)
+            transform-origin: center bottom
+            transform: translate3d(0,0,0)
+  .columns
+    margin:
+      left: (-1 * $column-gutter)
+      right: (-1 * $column-gutter)
+  .work-item__cta
+    transition: padding-right 0.4s
+    transform: translate3d(0,0,0)
+    backface-visibility: hidden
+    perspective: 1000
+    position: relative
+    font-size: 0.75em
+    &:before,
+    &:after
+      transition: transform 0.4s, opacity 0.2s
+      transform-origin: center
+      transform-style: preserve-3d
+      transform: translate3d(-1em, 0, 0) rotate3d(0, 0, 1, 45deg)
+      content: ""
+      display: block
+      width: 1px
+      height: 0.75em
+      position: absolute
+      top: 1em
+      right: 1em
+      background-color: rgba($color-white, 0.5)
+      opacity: 0
+    &:after
+      transform: translate3d(-1em, 0, 0) rotate3d(0, 0, 1, 135deg)
+    &:hover
+      padding-right: 2em
+      &:before,
+      &:after
+        transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 90deg)
+        opacity: 1
+      &:after
+        transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 180deg)
+  .work-item-devices
+    margin-top: 1.5em
+    padding: 0 1.5em
+    +break($mobile)
+      padding: 0
+    .work-item__device
+      transition: transform .2s
+      backface-visibility: hidden
+      perspective: 1000
+      cursor: ns-resize
+      +break($mobile)
+        margin: 0 1.5em
+    &.desktop.tablet.mobile
+      .work-item__device--desktop
+        +break($mobile)
+          transform: translate3d(20%, 0, 0)
+      .work-item__device--tablet
+        display: none
+        +break($mobile)
+          display: inline-block
+          transform: translate3d(-15%, 0, 0)
+      .work-item__device--mobile
+        display: none
+        +break($mobile)
+          display: inline-block
+          transform: translate3d(-105%, 0, 0)
+    &.desktop.tablet
+      .work-item__device--desktop
+        +break($mobile)
+          transform: translate3d(15%, 0, 0)
+      .work-item__device--tablet
+        display: none
+        +break($mobile)
+          display: inline-block
+          transform: translate3d(-40%, 0, 0)
+    &.desktop.mobile
+      .work-item__device--desktop
+        +break($mobile)
+          transform: translate3d(7%, 0, 0)
+      .work-item__device--mobile
+        display: none
+        +break($mobile)
+          display: inline-block
+          transform: translate3d(-40%, 0, 0)
+    &.tablet.mobile
+      .work-item__device--tablet
+        +break($mobile)
+          transform: translate3d(20%, 0, 0)
+      .work-item__device--mobile
+        display: none
+        +break($mobile)
+          display: inline-block
+          transform: translate3d(-40%, 0, 0)
+  .work-item__tagline,
+  .work-item__title
+    cursor: text
+  .work-item__tagline
+    margin-bottom: 1em
+    font-family: $font-merriweather
+    font-size: 0.65em
+    font-weight: 300
+    line-height: 1
+    +break($mobile)
+      font-size: 0.75em
+  .work-item__title
+    margin-bottom: 1.25em
+    font-family: $font-raleway
+    font-size: 1em
+    line-height: 1.2
+    text-transform: capitalize
+    +break($mobile)
+      margin-bottom: 0.75em
+      font-size: 2em
+      line-height: 1.2
+  .work-item__details
+    display: inline-block
+    text-align: left
+    cursor: default
+    +break($mobile)
+      +column(10,12,inline-block)
+    +break($laptop)
+      +column(8,12,inline-block)
+  .details__inner
+    display: none
+    margin-top: 3em
+    ul
+      margin-top: 0
+      margin-bottom: 1.5em
+      &.list-horizontal,
+      &.list-clean
+        font-family: $font-oswald
+        li
+          margin: 0 0.5em 0.25em 0
+          padding: 0.25em 0.5em
+          background-color: rgba($color-white, 0.2)
+          font:
+            size: 0.75em
+            weight: 300
+          letter-spacing: 1px
+          line-height: 1
+          text-transform: uppercase
+        &.list-clean
+          li
+            margin: 0
+            padding: 0
+            background-color: transparent
+        .link--external
+          display: inline-block
+          width: auto
+          margin: 0 0.5em 0.25em 0
+          padding: 0.25em 0.5em
+          background-color: rgba($color-white, 0.2)
+    a
+      color: $color-white
+    .details__title
+      margin-bottom: 1em
+      padding-bottom: 0.5em
+      border-bottom: 1px solid $color-white
+      border-color: rgba($color-white, 0.25)
+      font:
+        size: 0.875em
+      line-height: 1
+      text-transform: uppercase
+    .detail__item
+      margin-bottom: 1em
+    .detail__title
+      margin-bottom: 0.25em
+      color: rgba($color-white, 0.5)
+      font:
+        size: 0.75em
+        weight: 400
+      line-height: 1
+      text-transform: uppercase
+    .detail__content
+      font:
+        weight: 400
+
+
+.work-item--lindsayolives
+  background-color: func-monochrome-color(#AA8438)
+.work-item--cmap
+  background-color: func-monochrome-color(#40617B)
+.work-item--tiptonic
+  background-color: func-monochrome-color(#DC8F40)
+.work-item--compasshealthcenter
+  background-color: func-monochrome-color(#3D5C6A)
+.work-item--watchdox
+  background-color: func-monochrome-color(#942945)
+.work-item--darrellgrandmoultrie
+  background-color: func-monochrome-color(#8C7C84, 15%, 15%)
+.work-item--rebeldocumentary
+  background-color: func-monochrome-color(#D1C2A9, 10%)
+.work-item--handsonformusicalexperience
+  background-color: func-monochrome-color(#44B895)
+
+

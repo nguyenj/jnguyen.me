@@ -1,0 +1,19 @@
+// Notes
+// --------------------
+// If display is table, the micro clearfix must be eliminated to avoid the
+// Chrome bug. Chrome renders a 1px gap on table elements that has a clearfix
+// style applied to it.
+
+
+
+
+
+=row($display: block, $direction: ltr)
+  display: $display
+  direction: $direction
+  @if $display == block
+    +clearfix
+  @if $display == table
+    //table-layout: fixed
+    border-spacing: 0
+    border-collapse: collapse

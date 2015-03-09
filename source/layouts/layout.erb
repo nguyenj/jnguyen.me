@@ -1,0 +1,125 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <title><%= get_page_title(current_page.data.title) %></title>
+
+    <% if content_for?(:document_meta) %>
+      <%= yield_content :document_meta %>
+    <% end %>
+    
+    <%= stylesheet_link_tag "normalize", "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", "all" %>
+    <% if content_for?(:document_styles) %>
+      <%= yield_content :document_styles %>
+    <% end %>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-7449101-22', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    <script type="text/javascript">
+      WebFontConfig = {
+        google: { families: [ 'Lato:100,300,400,700:latin', 'Merriweather:300:latin', 'Lora::latin', 'Raleway:600:latin', 'Oswald:100,300,700' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })(); 
+    </script>
+    <%= javascript_include_tag  "all" %>
+    <% if content_for?(:document_scripts) %>
+      <%= yield_content :document_scripts %>
+    <% end %>
+  </head>
+  
+  <body class="<%= page_classes %>">
+    
+    <div class="site">
+
+      <header class="site-header" role="banner">
+        <div class="site-header__inner">
+          <div class="site-header__content">
+            <div class="site-identity">
+              <h1 class="site-title"><a href="/"><span class="ir-copy">John Nguyen</span></a></h1>
+              <h2 class="site-tagline"><span class="ir-copy">Front-end Developer</span></h2>
+            </div>
+            <nav class="site-nav" role="navigation">
+              <a href="#works">Work</a>
+              <a href="mailto:hello@jnguyen.me">Contact</a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <main class="site-main" role="content">
+        <%= yield %>
+      </main>
+
+      <footer class="site-footer" role="colophon">
+        <div class="site-footer__inner">
+          <div class="site-footer__content">
+            <div class="columns">
+              <div class="section resume column-6">
+                <div class="section__inner">
+                  <div class="section__content-wrap">
+                    <div class="section__content">
+                      <p><a href="http://cl.ly/ZmqY/download/Resume.pdf"><span>Resume</span></a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="section social-connect column-6">
+                <div class="section__inner">
+                  <div class="section__content-wrap">
+                    <div class="section__content">
+                      <ul class="list-horizontal">
+                        <li><a href="https://www.linkedin.com/in/itsjohn" class="social--network social--linkedin"><span>LinkedIn</span></a></li>
+                        <li><a href="https://github.com/nguyenj" class="social--network social--github"><span>Github</span></a></li>
+                        <li><a href="https://twitter.com/nguyeness" class="social--network social--twitter"><span>Twitter</span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="columns columns--rtl">
+              <div class="section contact column-6">
+                <div class="section__inner">
+                  <div class="section__content-wrap">
+                    <div class="section__content">
+                      <p><a href="tel:8144838313">814-483-8313</a> <a href="mailto:hello@jnguyen.me">hello@jnguyen.me</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="section copyright column-6">
+                <div class="section__inner">
+                  <div class="section__content-wrap">
+                    <div class="section__content">
+                      <p>&copy; 2015 <a href="/">John Nguyen</a>. All rights reserved.</p>
+                      <p>Web Design &amp; Development.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,22 @@
+a
+  text-decoration: none
+  &:hover,
+  &:focus
+    outline: none
+  &.link--external
+    // transition: all .4s
+    &:before,
+    &:after
+      +font-awesome
+    &:after
+      transition: margin-left 0.25s, opacity 0.4s, width 0.25s
+      content: "\f08e"
+      width: 1em
+      margin-left: 0.5em
+      opacity: 0.5
+    &:hover
+      &:after
+        transition: margin-left 0.4s, opacity 0.25s, width 0.4s
+        width: 0
+        margin-left: 0
+        opacity: 0
