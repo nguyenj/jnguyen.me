@@ -1,17 +1,19 @@
 .site-header
   margin: 3em 0 0 0
-  padding: 0 3em
+  padding: 0 3em 3em
   .site-header__inner
     +container
   .site-header__content
+    direction: rtl
     padding: 1em
     +break($tablet)
       padding: 0
   .site-identity
+    direction: ltr
     margin-bottom: 1.5em
     text-align: center
     +break($mobile)
-      +column(4,12,inline-block)
+      +column(6,12,inline-block)
       margin-bottom: 0
       padding: 0.5em 0 0 0
       text-align: left
@@ -37,11 +39,12 @@
         weight: 300
       line-height: 1
   .site-nav
+    direction: ltr
     text-align: center
     +break($mobile)
       +column(6,12,inline-block)
-      +shift-column(2,12,inline-block)
+      // +shift-column(2,12,inline-block)
       padding: 0
-      text-align: right
+      // text-align: right
     +break($tablet)
       text-align: left

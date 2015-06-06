@@ -1,7 +1,7 @@
 module CustomHelpers
   require 'json'
   def get_page_title(title)
-    if title.empty? || title.downcase == 'homepage'
+    if title.blank? || title.downcase == 'homepage'
       "John Nguyen - Web UX and Front-end Developer in San Francisco"
     else
       "#{title} | John Nguyen - Web UX and Front-end Developer in San Francisco"

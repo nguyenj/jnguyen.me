@@ -1,0 +1,14 @@
+html
+  transform: translateY(-3em)
+  opacity: 0
+  &.no-js
+    transform: translateY(0)
+    opacity: 1
+  &.js.wf-loading
+    transition: transform 0.2s, opacity 0.2s
+    transform: translateY(-3em)
+    opacity: 0
+  &.wf-active
+    transition: transform 0.2s, opacity 0.2s
+    transform: translateY(0)
+    opacity: 1

@@ -3,6 +3,15 @@
 source 'https://rubygems.org'
 
 gem "middleman", "~>3.3.10"
+# Syntax Highlighting
+gem "middleman-syntax"
+# MiddleMan Blog
+gem "middleman-blog"
+gem 'nokogiri'
+# For feed.xml.builder
+gem "builder", "~> 3.0"
+
+gem 'redcarpet'
 
 # CSS Autoprefixer
 gem 'middleman-autoprefixer'
