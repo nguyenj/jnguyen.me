@@ -1,0 +1,77 @@
+---
+layout: default
+---
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <p class="intro">A digital chef who is passionate about user experience, clean semantic code and who fully embraces collaboration</p>
+      <p>Beyond my enthusiasm for making, I enjoy cooking and <strong>eating</strong>, jogging, and the performing arts.</p>
+    </div>
+  </div>
+</div>
+
+{% assign projects = site.projects | sort: 'weight' | reverse %}
+{% for project in projects %}
+  <div class="work container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <h3 class="work__title">{{ project.title }}</h3>
+        <h4 class="work__tagline">{{ project.tagline }}</h4>
+        <a href="#{{ project.title | slugify }}">More info</a>
+
+        <div class="work-images">
+          {% for device in project.hero-images %}
+            <div class="work-images__device work-images__device--{{ device[0] }}">
+              <div class="work-images__image">
+                <img src="{{ device[1].images[0] }}" alt="{{ device[0] | capitalize }} version of {{ project.project }}" data-images="{{ device[1].images | join: ', ' }}" />
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div id="{{ project.title | slugify }}" class="work-details row">
+
+          <div class="col-xs-12 col-md-8">
+            <h5 class="work-details__title"><small>Project</small> {{ project.project }}</h5>
+            <div class="work-details__description">
+              {{ project }}
+            </div>
+          </div>
+
+          <aside class="col-xs-12 col-md-4">
+            <div class="work-details__section">
+              <h5 class="work-details__section-title">Collaborators</h5>
+              <ul class="list-clean">
+                {% for collaborator in project.collaborators %}
+                <li><a href="{{ collaborator['url'] }}">{{ collaborator['name'] }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div class="work-details__section">
+              <h5 class="work-details__section-title">Responsibilities</h5>
+              <ul class="list-clean">
+                {% for responsibility in project.responsibilities %}
+                  <li>{{ responsibility }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div class="work-details__section">
+              <h5 class="work-details__section-title">Collaborators</h5>
+              <ul class="list-clean">
+                {% for technology in project.technology-stack %}
+                  <li>{{ technology }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </aside>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+{% endfor %}
