@@ -1,0 +1,79 @@
+---
+layout: post
+title: Writing Maintainable Media Queries with SASS
+date: 2015-06-05 19:44:50.000000000 -04:00
+type: post
+published: true
+status: publish
+categories:
+- Technology
+tags:
+- CSS
+- Front-end
+- media-query
+- Responsive
+- SASS
+meta:
+  _edit_last: '8971604'
+  geo_public: '0'
+  _wpcom_is_markdown: '1'
+  _wp_old_slug: hello-world
+author:
+  login: nguyenjl
+  email: hello@jnguyen.me
+  display_name: John
+  first_name: ''
+  last_name: ''
+---
+<p>There are so many media query mixins in the wild, and I like to share the one that I've been using as of late. It's a compilation of all the ones that I've used evolved to fit my workflow needs. This will allow media queries to break depending on a predetermined content breakpoint or a predetermined feature breakpoint.</p>
+<p>I typically start off with one breakpoint, <code>$desktop</code>. This allows me to start off with a mobile and a desktop layout.</p>
+<p>[code lang=text]<br />
+$desktop: 820px;<br />
+[/code]</p>
+<p>Now onto the mixin definition. It's quite basic and easy to follow:</p>
+<p>[code lang=text]<br />
+@mixin media($viewports...) {<br />
+  $media-query: &#039;screen&#039;;</p>
+<p>  @each $view in $viewports {<br />
+    $media-query: $media-query + &#039; and (&#039; + $view +&#039;)&#039;;<br />
+  }</p>
+<p>  @media #{$media-query} {<br />
+    @content;<br />
+  }<br />
+}<br />
+[/code]</p>
+<p>The <code>media</code> takes an undetermined number of parameters. This allows for complex media queries if needed for unique situations.</p>
+<p>The second part to this mixin are the media feature variables. Let's define a few example media features:</p>
+<p>[code lang=text]<br />
+$some_min_width: min-width 640px;<br />
+$some_max-width: max-width 980px;<br />
+$some_min_height: min-height 800px;<br />
+$some_max_height: max-height 1200px;<br />
+$orientation_landscape: orientation landscape;<br />
+$retina: min-device-pixel-ratio 2;<br />
+[/code]</p>
+<p>Each media feature variable combined with the mixin will output:</p>
+<p>[code lang=text]<br />
+@media screen and (min-width: 640px) { ... }<br />
+@media screen and (max-width: 980px) { ... }<br />
+@media screen and (min-height: 800px) { ... }<br />
+@media screen and (max-height: 1200px) { ... }<br />
+@media screen and (orientation: landscape) { ... }<br />
+@media screen and (min-device-pixel-ratio: 2) { ... }<br />
+[/code]</p>
+<p>Or we can define something complex and semi-crazy, this will probably be used in very unique situations; however, it's able to produce the media queries in a maintainable and readable fashion. I've broken up the parameters onto its own line just so we can see how complex and the ability to handle an undefined number of parameters.</p>
+<p>[code lang=text]<br />
+@include media(<br />
+    $some_min_width,<br />
+    $some_max-width,<br />
+    $some_min_height,<br />
+    $some_max_height,<br />
+    $orientation_landscape,<br />
+    $retina) { ...  }<br />
+[/code]</p>
+<p>This will output to:</p>
+<p>[code lang=text]<br />
+@media screen and (min-width: 640px) and (max-width: 980px) and (min-height: 800px) and (max-height: 1200px) and (orientation: landscape) and (min-device-pixel-ratio: 2) { ... }<br />
+[/code]</p>
+<p>So there you have it, the simplest yet powerful and maintainable media query mixin. There are many others out there in the wild; however, this has worked for me on various projects without much effort. I hope you can use this in your next project and evolve it to your needs.</p>
+<p>Cheers.</p>

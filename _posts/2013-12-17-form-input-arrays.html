@@ -1,0 +1,38 @@
+---
+layout: post
+title: Form input arrays
+date: 2013-12-17 16:10:28.000000000 -05:00
+type: post
+published: true
+status: publish
+categories:
+- Web Development
+tags:
+- Ruby
+meta:
+  sharing_disabled: '1'
+  switch_like_status: '1'
+  original_post_id: '22'
+  _wp_old_slug: '22'
+  _edit_last: '8971604'
+  _publicize_job_id: '22579697053'
+  geo_public: '0'
+  _wpcom_is_markdown: '1'
+author:
+  login: nguyenjl
+  email: hello@jnguyen.me
+  display_name: John
+  first_name: ''
+  last_name: ''
+---
+<p>With strong parameters, define the array instants as</p>
+<pre><code>:instant_name =&gt; []</code></pre>
+<p>in the controller.</p>
+<p>Then the data needs to <a href="http://api.rubyonrails.org/classes/ActiveModel/Serialization.html" target="_blank">serialized</a> before the model saves the data–so in the model define</p>
+<pre><code>serialize :instant_name</code></pre>
+<p>However, ignoring empty arrays might be a good thing–so also include</p>
+<pre><code>before_save { self.instant_name.reject! { |a| a.empty? } }</code></pre>
+<p>to make sure empty items aren't saved.</p>
+<p>To create the array of inputs, in this case use the <a href="http://api.rubyonrails.org/classes/ActionView/Helpers/FormTagHelper.html#method-i-text_field_tag" target="_blank">text_field_tag</a>,</p>
+<pre><code>text_field_tag(model_name[instant_name][])</code></pre>
+<p>Providing additional attributes is optional.</p>
