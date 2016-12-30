@@ -1,0 +1,42 @@
+.loading
+  .loading__icon
+    width: 3em
+    height: 3em
+    position: absolute
+    top: 25%
+    left: 47%
+    font-size: 50%
+    &:before,
+    &:after
+      content: ''
+      display: block
+      width: 3em
+      height: 3em
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      z-index: 1
+      border-radius: 50%
+      background-color: rgba($color-white, .25)
+    &:after
+      animation-name: smooth-pulse
+      animation-duration: .6s
+      animation-iteration-count: infinite
+      width: 1.5em
+      height: 1.5em
+      top: 0.75em
+      left: 0.75em
+
+
+@keyframes smooth-pulse
+  0%
+    transform: scale(1)
+    transform-origin: center center
+  50%
+    transform: scale(1.25)
+    transform-origin: center center
+  100%
+    transform: scale(1)
+    transform-origin: center center

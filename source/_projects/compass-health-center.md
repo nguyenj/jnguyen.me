@@ -27,7 +27,7 @@ hero-images:
   desktop:
     images:
       - /assets/images/projects/compass_health_center/compass_health_center-homepage--desktop.png
-      - /assets/images/projects/compass_health_center/compass_health_center-faq--desktop.png
+      - /assets/images/projects/compass_health_center/compass_health_center-new_patient--desktop.png
   mobile:
     images:
       - /assets/images/projects/compass_health_center/compass_health_center-homepage--mobile.png

@@ -23,7 +23,11 @@ description: > # this means to ignore newlines until "baseurl:"
 # Build settings
 source: ./source
 destination: ./build
+exclude: [assets/sass]
 markdown: kramdown
+sass:
+  sass_dir: assets/sass
+  style: compressed
 permalink: /:year/:month/:title/
 collections:
   - projects

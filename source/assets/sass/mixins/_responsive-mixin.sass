@@ -1,0 +1,10 @@
+=break($viewport-1: $desktop, $viewport-2: null, $constraint: min)
+  @if $constraint == min
+    @media screen and (min-width: $viewport-1)
+      @content
+  @if $constraint == max
+    @media screen and (max-width: $viewport-1)
+      @content
+  @if $viewport-2 != null
+    @media screen and (min-width: $viewport-1) and (max-width: $viewport-2)
+      @content

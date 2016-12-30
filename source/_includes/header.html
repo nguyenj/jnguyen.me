@@ -1,15 +1,14 @@
 <header class="site-header" role="banner">
-
-  <a class="site-title" href="{{ site.baseurl }}/">{{ site.title | escape }}</a>
-
-  <nav class="site-nav">
-    <div class="trigger">
-      {% for my_page in site.pages %}
-        {% if my_page.title %}
-        <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title | escape }}</a>
-        {% endif %}
-      {% endfor %}
+  <div class="site-header__inner">
+    <div class="site-header__content">
+      <div class="site-identity">
+        <h1 class="site-title"><a href="{{ site.baseurl }}/" title="{{ site.title | escape }}">{{ site.title | escape }}</a></h1>
+        <h2 class="site-tagline"><span class="ir-copy">Front-end Developer</span></h2>
+      </div>
+      <nav class="site-nav" role="navigation">
+        <a href="/#works">Work</a>
+        <a href="mailto:hello@jnguyen.me?subject=Let's%20work%20together">Contact</a>
+      </nav>
     </div>
-  </nav>
-
+  </div>
 </header>

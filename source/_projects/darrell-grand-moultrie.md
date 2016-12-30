@@ -28,13 +28,13 @@ hero-images:
     images:
       - /assets/images/projects/darrell_grand_moultrie/darrell_grand_moultrie-homepage1--desktop.png
       - /assets/images/projects/darrell_grand_moultrie/darrell_grand_moultrie-homepage2--desktop.png
+      - /assets/images/projects/darrell_grand_moultrie/darrell_grand_moultrie-works--desktop.png
       - /assets/images/projects/darrell_grand_moultrie/darrell_grand_moultrie-work1--desktop.png
       - /assets/images/projects/darrell_grand_moultrie/darrell_grand_moultrie-work2--desktop.png
-      - /assets/images/projects/darrell_grand_moultrie/darrell_grand_moultrie-works--desktop.png
   tablet:
     images:
-      - /assets/images/projects/darrell_grand_moultrie/darrell_grand_moultrie-bio--tablet.png
       - /assets/images/projects/darrell_grand_moultrie/darrell_grand_moultrie-work1--tablet.png
+      - /assets/images/projects/darrell_grand_moultrie/darrell_grand_moultrie-bio--tablet.png
   mobile:
     images:
       - /assets/images/projects/darrell_grand_moultrie/darrell_grand_moultrie-homepage--mobile.png

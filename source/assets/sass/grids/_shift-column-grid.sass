@@ -1,0 +1,23 @@
+=shift-column($span: $columns, $total-columns: $columns, $display: block, $direction: ltr)
+  @if $responsive
+    @if $direction == ltr
+      @if $display == table-cell
+        padding-left: percentage($span / $total-columns)
+      @else
+        margin-left: percentage($span / $total-columns)
+    @if $direction == rtl
+      @if $display == table-cell
+        padding-right: percentage($span / $total-columns)
+      @else
+        margin-right: percentage($span / $total-columns)
+  @else
+    @if $direction == ltr
+      @if $display == table-cell
+        padding-left: ($span / $total-columns) * $container-width
+      @else
+        margin-left: ($span / $total-columns) * $container-width
+    @if $direction == rtl
+      @if $display == table-cell
+        padding-right: ($span / $total-columns) * $container-width
+      @else
+        margin-right: ($span / $total-columns) * $container-width

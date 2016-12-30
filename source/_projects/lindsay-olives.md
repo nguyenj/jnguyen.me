@@ -23,11 +23,11 @@ hero-images:
   desktop:
     images:
       - /assets/images/projects/lindsay_olives/lindsayolives-homepage--desktop.png
+      - /assets/images/projects/lindsay_olives/lindsayolives-story--desktop.png
       - /assets/images/projects/lindsay_olives/lindsayolives-products--desktop.png
       - /assets/images/projects/lindsay_olives/lindsayolives-product--desktop.png
       - /assets/images/projects/lindsay_olives/lindsayolives-recipes--desktop.png
       - /assets/images/projects/lindsay_olives/lindsayolives-recipe--desktop.png
-      - /assets/images/projects/lindsay_olives/lindsayolives-stroy--desktop.png
       - /assets/images/projects/lindsay_olives/lindsayolives-wof--desktop.png
       - /assets/images/projects/lindsay_olives/lindsayolives-wof_olives--desktop.png
   mobile:
