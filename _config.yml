@@ -21,9 +21,8 @@ description: > # this means to ignore newlines until "baseurl:"
   who fully embraces collaboration
 
 # Build settings
-source: ./source
 destination: ./build
-exclude: [assets/sass]
+exclude: [Gemfile,Gemfile.lock,assets/sass,.ruby-version]
 markdown: kramdown
 sass:
   sass_dir: assets/sass
