@@ -27,6 +27,9 @@ markdown: kramdown
 sass:
   sass_dir: assets/sass
   style: compressed
-permalink: /:year/:month/:day/:title/
+permalink: /articles/:year/:month/:day/:title/
+gems: [jekyll-paginate]
+paginate: 10
+paginate_path: /articles/page:num/
 collections:
   - projects

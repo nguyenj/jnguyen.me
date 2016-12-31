@@ -1,0 +1,28 @@
+---
+layout: default
+title: Articles
+permalink: /articles/
+---
+
+<div class="container">
+  <ul class="list--clean posts posts--list">
+    {% for post in paginator.posts %}
+    <li class="posts__post post">
+      <time class="post__datetime" datetime="{{ post.date }}">{{ post.date | date: '%d %B %Y' }}</time>
+      <h3 class="post__title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div class="pagination">
+  <div class="pagination__inner">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="pagination__nav pagination__nav--previous">Previous</a>
+    {% endif %}
+
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="pagination__nav pagination__nav--next">Next</a>
+    {% endif %}
+  </div>
+</div>
