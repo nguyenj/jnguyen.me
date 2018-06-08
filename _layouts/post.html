@@ -8,8 +8,9 @@ layout: articles
 
     <article class="posts__post" itemscope itemtype="http://schema.org/BlogPosting">
 
-      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
       <h1 class="post__title" itemprop="name headline">{{ page.title | escape }}</h1>
+
+      <time class="post__date" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
 
       <div class="post__content" itemprop="articleBody">
         {{ content }}
