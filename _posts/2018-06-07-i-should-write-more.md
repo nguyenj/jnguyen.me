@@ -1,6 +1,7 @@
 ---
 layout: post
 title: I should write more
+subtitle: We all gotta start somewhere.
 date: 2018-06-07 19:53 -0700
 ---
 
