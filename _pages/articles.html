@@ -1,0 +1,19 @@
+---
+layout: article
+permalink: /articles
+---
+
+<h1>Articles</h1>
+
+{% assign articles_by_year = site.posts | group_by_exp: "article", "article.date | date: '%Y'" %}
+{% for year in articles_by_year %}
+  <section class="articles">
+    <h2>{{ year.name }}</h2>
+    {% for article in year.items %}
+      <article>
+        <header><h1>{{ article.title | escape }}</h1></header>
+        <footer><time datetime="{{article.date}}">{{ article.date | date: "%m/%d" }}</time></footer>
+      </article>
+    {% endfor %}
+  </section>
+{% endfor %}

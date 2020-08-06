@@ -1,22 +1,15 @@
 ---
-layout: articles
+layout: article
 ---
 
-<div class="container">
+<article class="posts__post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <div class="posts">
+  <h1 class="post__title" itemprop="name headline">{{ page.title | escape }}</h1>
 
-    <article class="posts__post" itemscope itemtype="http://schema.org/BlogPosting">
+  <time class="post__date" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
 
-      <h1 class="post__title" itemprop="name headline">{{ page.title | escape }}</h1>
-
-      <time class="post__date" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
-
-      <div class="post__content" itemprop="articleBody">
-        {{ content }}
-      </div>
-
-    </article>
-
+  <div class="post__content" itemprop="articleBody">
+    {{ content }}
   </div>
-</div>
+
+</article>

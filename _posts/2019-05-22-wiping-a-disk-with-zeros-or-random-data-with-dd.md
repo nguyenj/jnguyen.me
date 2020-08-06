@@ -4,7 +4,6 @@ title: Wiping a disk with zeros or random data with `dd`
 date: '2019-05-22T14:02:35-04:00'
 tags:
 - linux
-tumblr_url: https://nguyeness.tumblr.com/post/185065553786/wiping-a-disk-with-zeros-or-random-data-with-dd
 ---
 Wiping a disk with zeros:
 
@@ -25,4 +24,3 @@ To determine optimial speed, run:
     dd if=/dev/urandom of=zero bs=1G; rm zero;
 
 Add as many different block size (`bs`) variants to test for optimial speeds.
-

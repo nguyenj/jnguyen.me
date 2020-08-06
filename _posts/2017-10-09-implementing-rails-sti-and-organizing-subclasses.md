@@ -6,7 +6,6 @@ tags:
 - ruby
 - ruby and rails
 - sti
-tumblr_url: https://nguyeness.tumblr.com/post/166217502301/implementing-rails-sti-and-organizing-subclasses
 ---
 I won’t be talking about why or when to use Single Table Inheritance–this article is about how to implement and organize your files.
 
@@ -37,7 +36,7 @@ By default rails will use the `type` column in Fruit to identify which subclass 
 Then in the subclasses, in this case the Apple class:
 
     # app/models/fruit/apple.rb
-    
+
     class Fruit::Apple < Fruit
       def self.sti_name
         'Apple'
@@ -52,4 +51,3 @@ Now, define the scopes in the base model for ease of querying via the base model
     ...
 
 That’s pretty much it.
-
